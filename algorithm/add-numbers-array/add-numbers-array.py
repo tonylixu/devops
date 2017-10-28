@@ -1,3 +1,5 @@
+# Time complexity: O(n)
+# Space complexity: 2 * n
 numbers = [1, 2, 3, 5, 6, 8, 25]
 numbers2 = []
 
