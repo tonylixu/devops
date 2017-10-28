@@ -9,3 +9,9 @@
 * Availability: In a context of database cluster, availability refers to the ability to always respond to the queries (read or write) irrespective of nodes going down.
 * Partition Tolerance: In the context of a database cluster, cluster continues to function even if there is a "partition" (communications break) between two nodes.
 * Vertical scaling and Horizontal scaling : In simple terms, to scale horizontally is adding more servers. To scale vertically is to increase the resources of the server ( RAM, CPU, storage, etc. ). 
+
+## CAP Theorem 
+CAP states that in a distributed system, it is impossible to simultaneously guarantee all of the following:
+* Consistency
+* Availability
+* Partition Tolerance
