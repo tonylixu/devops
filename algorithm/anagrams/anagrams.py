@@ -1,14 +1,12 @@
+# Time Complexity: O(m * n * logn)
+#     (n*logn) is the sorted function time complexity
+# Space complexity:
+# 2*m*n
+from collections import defaultdict
+
 data = ['trees', 'bike', 'cars', 'steer', 'arcs']
-d = {}
+d2 = defaultdict(list)
 for w in data:
-    key = ''.join(sorted(w))
-    mylist = []
-    if key in d:
-        mylist = d[key]
-        mylist.append(w)
-        d[key] = mylist
-    else:
-        mylist.append(w)
-        d[key] = mylist
-for l in d.values():
+    d2[''.join(sorted(w))].append(w)
+for l in d2.values():
     print l
