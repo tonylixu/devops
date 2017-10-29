@@ -39,4 +39,10 @@
   for c = 5, n = 0
   5n^2 <= f(n), n >= 0
   ```
-  * 
+  * Theta notation: tight bount
+  ```bash
+  f(n) = 5n^2 + 2n + 2 = O(n^2)
+  g(n) = n^2
+  for c = 5, n = 0
+  5n^2 <= f(n), n >= 0
+  ```
