@@ -22,3 +22,21 @@
          1 unit + 2(n+1) units + 2n units + 1 unit = 4n + 4
          T(n) = Cn + C'
   ```
+* Asymptotic notations
+  * Algorithm1: T(n) = 5n^2 + 7
+  * Algorithm2: T(n) = 17n^2 + 6n + 8
+  * Both are running on our model machine.
+  * when n -> oo, constant can be ignored
+  * "Big-oh": Upper bound of the rate growth of time
+  ```bash
+  f(n) = 5n^2 + 2n + 2 = O(n^2)
+  g(n) = n^2
+  ```
+  * Omega notation: lower bound of the growth of time
+  ```bash
+  f(n) = 5n^2 + 2n + 2 = O(n^2)
+  g(n) = n^2
+  for c = 5, n = 0
+  5n^2 <= f(n), n >= 0
+  ```
+  * 
