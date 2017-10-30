@@ -46,3 +46,13 @@
   for c = 5, n = 0
   5n^2 <= f(n), n >= 0
   ```
+
+## General rules:
+We analyze time complexity for
+* Very large input-size
+* Worst case scenario
+* For example, T(n) = n^3 + 3n^2 + 4n + 2, this T(n) almost equal to n^3 when n -> oo, the Big(O) of this function is O(n^3)
+* Rule 1: drop lower order terms
+* Rule 2: drop constant multiplier
+* Rule 3: Running time = Sum(Running time of all fragments)
+* Rule 4: Conditional statements, pick complexity of condition which is worst case
