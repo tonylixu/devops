@@ -8,4 +8,8 @@ with open('apache.log', 'r') as f:
     lines = f.readlines()
     
 for line in lines:
-    print re.match(regex, line).groups()
+    try:
+        print re.match(regex, line).groups()
+    except:
+        print "Opps, this line can not be passed"
+        pass
