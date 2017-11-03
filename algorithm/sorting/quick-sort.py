@@ -1,4 +1,4 @@
-
+gi
 def quicksort(array, start, end):
     if start < end:
         p_index = partition(array, start, end)
