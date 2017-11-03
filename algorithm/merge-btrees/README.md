@@ -20,3 +20,9 @@ Merged tree:
 	  / \   \ 
 	 5   4   7
 ```
+
+### Time complexity
+O(n), n is the number of elements in the tallest tree
+
+### Space complexity
+O(n). Two binary trees
