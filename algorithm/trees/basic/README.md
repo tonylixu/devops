@@ -23,3 +23,12 @@ Tree datastructure can be defined as a collection of entities called nodes linke
 * descendent
 * depth of x: length of path from root to x
 * height of x: Number of edges in the longest path from x to a leaf. Hight of a tree is the height of the root node.
+
+### Tree Applications
+* Stroing naturally
+  * hierarchical data: file system
+* Organize data
+  * For quick search, insertion, deletion
+* Trie
+  * dictionary
+* Network and routing
