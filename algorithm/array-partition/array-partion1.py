@@ -10,11 +10,14 @@ Explanation: n is 2, and the maximum sum of pairs is 4 = min(1, 2) + min(3, 4).
 Note:
 n is a positive integer, which is in the range of [1, 10000].
 All the integers in the array will be in the range of [-10000, 10000].
+
+Time complexity: O(n)
+Space complexity: O(n)
 '''
 
 def arrayPairSum(array):
     new_array = sorted(array)
-    groups = zip(*[iter(new_array)]*2)
+    groups = zip(*[iter(sorted(new_array))]*2)
     counter = 0
     for p in groups:
         counter += min(p)
