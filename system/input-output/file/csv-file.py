@@ -11,9 +11,12 @@ def write_to_csv(v):
         csvout = csv.writer(f)
         csvout.writerows(v)
 
-                
-
-
+def read_from_csv():
+    with open('data.csv', 'r') as f:
+        csvin = csv.reader(f)
+        for row in csvin:
+            print row
+        
 if __name__ == '__main__':
     villains = [
         ['Doctor', 'No'],
@@ -23,3 +26,4 @@ if __name__ == '__main__':
         ['Ernst', 'Blofeld']
     ]
     write_to_csv(villains)
+    read_from_csv()
