@@ -16,6 +16,12 @@ def read_from_csv():
         csvin = csv.reader(f)
         for row in csvin:
             print row
+            
+def read_from_csv_dict():
+    with open('data.csv', 'rt') as f:
+        csvin = csv.DictReader(f, fieldnames=['first', 'last'])
+        for row in csvin:
+            print row
         
 if __name__ == '__main__':
     villains = [
@@ -27,3 +33,4 @@ if __name__ == '__main__':
     ]
     write_to_csv(villains)
     read_from_csv()
+    read_from_csv_dict()
