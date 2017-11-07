@@ -9,4 +9,3 @@ elif kinds < (length/2):
     print kinds
 else:
     print length/2
-    
