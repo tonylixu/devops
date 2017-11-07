@@ -22,3 +22,17 @@ The sister has two different kinds of candies, the brother has only one kind of 
 Notes:
 * The length of the given array is in range [2, 10,000], and will be even.
 * The number in given array is in range [-100,000, 100,000].
+
+### Solution
+The key point here is to find how many different kind of candies do you have in your candie jar. Once you find out the different number of candies you have, then you almost find the solution.
+
+Another important part is to realize that no matter how many kinds of candies you have, the most different kinds number of candies you can give to the sister is <= (half length of the candies), you have to be fair :)
+
+For exmaple, let's say you have 10 candies. If you have 10 different kinds of candies, you can only give 5 to your sister. If you have 4 different candies, you can give 4 different kinds of candies to your sister. If you have 1 different candies, you can give only give one. See the pattern here?
+
+```bash
+if kinds_of_candies <= half_of_length:
+    return kinds_of_candies
+else:
+    return half_of_length
+```
