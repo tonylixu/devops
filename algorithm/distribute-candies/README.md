@@ -36,3 +36,7 @@ if kinds_of_candies <= half_of_length:
 else:
     return half_of_length
 ```
+
+### Complexity
+Time complexity: O(n), n is number of integers.
+Space compleity: O(n), n is number of integers.
