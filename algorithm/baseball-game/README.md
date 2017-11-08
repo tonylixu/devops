@@ -61,4 +61,9 @@ for i in array:
 
 return sum(new_array)
 
+### Complexity analysis
+* Time complexity: O(n)
+* Space complexity: O(n)
+* n is the length of array
+
 
