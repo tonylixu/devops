@@ -35,3 +35,9 @@ Round 5: You could get 9 points. The sum is: 8.
 Round 6: You could get -4 + 9 = 5 points. The sum is 13.
 Round 7: You could get 9 + 5 = 14 points. The sum is 27.
 ```
+
+### Notes:
+* The size of the input list will be between 1 and 1000.
+* Every integer represented in the list will be between -30000 and 30000.
+
+### Solution Analysis
