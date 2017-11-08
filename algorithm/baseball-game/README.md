@@ -41,3 +41,24 @@ Round 7: You could get 9 + 5 = 14 points. The sum is 27.
 * Every integer represented in the list will be between -30000 and 30000.
 
 ### Solution Analysis
+The key here is to use a second array/list/stack. Insted of manipulate and mess up the orginal list (things can get complex), we just simple calculate each round's point and save into another array. Then add the sum.
+
+As you traverse through the whole array, depends on the element type, you perform certain operations, and the operation can be defined in the following pseudo code:
+
+for i in array:
+    # We withdraw the last valid point
+    if i == "C":
+        new_array.pop()
+    elif i == "D":
+        val = new_array.last * 2
+        new_array.append(val)
+    elif i == "+":
+        val_1 = new_array.last
+        val_2 = new_array.second_last
+        new_array.append(val_1 + val_2)
+    else:
+        new_array.append(i)
+
+return sum(new_array)
+
+
