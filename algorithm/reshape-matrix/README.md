@@ -32,3 +32,15 @@ Output:
 Explanation:
 There is no way to reshape a 2 * 2 matrix to a 2 * 4 matrix. So output the original matrix.
 ```
+
+### Solution analysis
+* Questions:
+  * What's the maximum rows and columns?
+  * What will happen if the given rows and columns are negative
+  * In the base matrix, does every list have equal length?
+  * What happens if the base matrix has 0 element?
+
+* Steps:
+  * Make sure the base matrix is reshape-able
+  * Combine all the list into a big list
+  * Start filling into the new array
