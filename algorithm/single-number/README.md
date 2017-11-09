@@ -38,3 +38,7 @@ for a in array:
     temp ^= a
 return temp
 ```
+
+### Time complexity analysis
+* Time complexity is O(n), n is the number of element in array
+* Space complexity is O(n), n is the number of element in array
