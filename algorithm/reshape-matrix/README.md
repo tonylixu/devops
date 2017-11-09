@@ -44,3 +44,7 @@ There is no way to reshape a 2 * 2 matrix to a 2 * 4 matrix. So output the origi
   * Make sure the base matrix is reshape-able
   * Combine all the list into a big list
   * Start filling into the new array
+
+### Complexity Analysis
+* Time complexity: O(n)
+* Space complexity: O(2n = O(n)
