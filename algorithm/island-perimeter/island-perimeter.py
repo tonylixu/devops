@@ -1,16 +1,20 @@
 def island_perimeter(grid):
-    land_points = []
-    row = 0
-    #print "grid is " + str(len(grid))
-    while row < len(grid):
-        #print "grid row is " + str(len(grid[row]))
-        col = 0
-        while col < len(grid[row]):
-            if grid[row][col] == 1:
-                land_points.append((row, col))
-            col += 1
-        row += 1
-    print dict(land_points)
+    # The total number of rows and cols
+    rows = len(grid)
+    cols = len(grid[0])
+    # Define the perimeter
+    p = 0
+    for i in range(rows):
+        for j in range(cols):
+            # This is a land
+            if grid[i][j] == 1:
+                p += 4
+                if grid[i-1][j] == 1 and i > 0:
+                    p -= 2
+                if grid[i][j-1] == 1 and j > 0:
+                    p -= 2
+    print p
+        
 
 if __name__ == '__main__':
     grid = [
