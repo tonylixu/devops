@@ -36,3 +36,7 @@ for r in range(row):
                 perimeter -=2
 return perimeter
 ```
+
+### Complexity Analysis
+* Time complexity: O(n^2), n is the row length of the array
+* Space complexity: O(n^2), n is the row length of the array
