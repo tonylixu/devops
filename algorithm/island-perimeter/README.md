@@ -21,19 +21,18 @@ For exmaple, land (0,1) and land (1,1) are interconnected, so the edge between t
 ### Pseudo code:
 ```bash
 # traverse the two-d array and identify land points.
-land_points = {}
-land_counter = 0
-for i in row:
-    for j in col:
-        if a[i][j] == 1:
-            land_row[i] += 1
-            land_col[j] += 1
-            land_counter += 1 
+row = len(grid)
+col = len(grid[0])
+perimeter = 0
 
-for v in land_row[i].values:
-    sub_edge += (v-1)*2
-for v in land_col[i].values:
-    sub_edge += (v-1)*2
-
-return 4 * land_counter - sud_edge
+for r in range(row):
+    for c in range(col):
+        # If this is a land
+        if grid[x][y] == 1:
+            perimeter += 4
+            if grid[x-1][y] == 1:
+                perimeter -=2
+            if grid[x][y-1] == 1:
+                perimeter -=2
+return perimeter
 ```

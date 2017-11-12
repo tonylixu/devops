@@ -10,7 +10,15 @@ def island_perimeter(grid):
                 land_points.append((row, col))
             col += 1
         row += 1
-    print dict(land_points)
+    print land_points
+    row = [0] * len(grid)
+    col = [0] * len(grid)
+    for i in land_points:
+        row[i[0]] += 1
+        col[i[1]] += 1
+    print row
+    print col
+        
 
 if __name__ == '__main__':
     grid = [
