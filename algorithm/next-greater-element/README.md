@@ -1,4 +1,4 @@
-### Problem Definition
+### Problem definition
 You are given two arrays (without duplicates) nums1 and nums2 where nums1’s elements are subset of nums2. Find all the next greater numbers for nums1's elements in the corresponding places of nums2.
 
 The Next Greater Number of a number x in nums1 is the first greater number to its right in nums2. If it does not exist, output -1 for this number.
@@ -27,6 +27,31 @@ Notes:
 * All elements in nums1 and nums2 are unique.
 * The length of both nums1 and nums2 would not exceed 1000.
 
-### Solution Analysis
-We can traverse nums1 array, for each element, we find its position in nums2. If it is the last element, we return `-1`, otherwise we compare it with the right element in nums2.
+### Solution analysis
+We can traverse nums1 array, for each element, we find its position in nums2. If it is the last element, we return `-1`, otherwise we compare it with the rest of right element in nums2.
 
+In Python, you can use the list index() function to find the elements index.
+
+### Pesudo code
+```python
+# Traverse through the first array
+for i in nums1:
+    index = nums2.index(i)
+    # Place holder if we find the numer
+    find_it = 0
+    # If it is the last element
+    if index == len(nums2) - 1:
+        re.append(-1)
+    else:
+        # Traverse the rest of right array
+        for j in range(index+1, len(nums2)):
+            if i < nums2[j]:
+                re.append(nums2[j])
+                find_it = 1
+                # Until we find one
+                break
+        # If no find in the rest of right array
+        if find_it == 0:
+            re.append(-1)
+    return re
+```
