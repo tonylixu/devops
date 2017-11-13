@@ -55,3 +55,7 @@ for i in nums1:
             re.append(-1)
     return re
 ```
+
+### Complexity analysis
+* Time complexity O(n^2)
+* Space complexity O(n)
