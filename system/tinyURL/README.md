@@ -10,4 +10,8 @@ First of all, I think we need to understand this question a little bit better. W
 TinyURL is a URL shortening web service, which provides short aliases for redirection of long URLs. It takes long URLs and shrink them into much smaller ones, then when you enter the shortened URL into web browser, they gets converted back to the original length. One of the advantage of shorten URL is easy to remember, written down and post.
 
 ### Technical background
-The URL shortening problem 
+The URL shortening problem is all about generating a short and unique key (alias) for a given URL and whenever the shorten URL is been requested, they will be redirected to the real URL.
+
+Two shorten solutions:
+* Encoding actual URL: Compute a unique hash (MD5 or SHA256) of the given URL. The hash can then be encoded for displaying. The encoding could be based36([a-z,0-9]) or base62([A-Z,a-z,0-9]) and base64 if we add `-` and `.`.
+* Generating keys offline: We can have a standalone Key Generation Service(KGS) that generates random six letter strings beforehand and stores them in a database. Whenever we want to shorten a URL, we will just take one of the already generated keys and use it. This approach will make things quite simple and fast since we are not encoding the URL or worrying about duplications or collisions. KGS will make sure all the keys inserted in our keys database are unique.
