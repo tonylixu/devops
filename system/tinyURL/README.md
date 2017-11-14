@@ -40,3 +40,26 @@ return 'http://tinyurl.com/' + str(len(url_lists)-1)
 # Decoding
 return url_lists[int(url_lists_shortened[i].split('/')[-1])]
 ```
+
+### Solution2
+So solution1 has some disadvantages:
+* For the same url, it output different encodings
+* It is easy to tell how many urls have been encoded
+* The space complexity can go huge easily. 
+
+So instead of using increasing numbers, in our second solution, we use fixed length characters. 
+Data structure:
+* We will have two dictionaries, encoded_urls and decoded_urls
+* For a given encoding:
+  * https://leetcode.com/problems/design-tinyurl
+  * http://tinyurl.com/KtLa2U
+* The mapping will be:
+  * encoded_urls[longUrl] = 'http://tinyurl.com/KtLa2U'
+  * decoded_urls['KtLa2U'] = longUrl
+
+Steps:
+* Randomly generate a 6 character string
+* Append the randomly generatly string to 'http://tinyurl.com/'
+* Record the mapping between encoded string and original string
+* Return the encoded string
+* For decode, simply 
