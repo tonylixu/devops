@@ -15,3 +15,28 @@ The URL shortening problem is all about generating a short and unique key (alias
 Two shorten solutions:
 * Encoding actual URL: Compute a unique hash (MD5 or SHA256) of the given URL. The hash can then be encoded for displaying. The encoding could be based36([a-z,0-9]) or base62([A-Z,a-z,0-9]) and base64 if we add `-` and `.`.
 * Generating keys offline: We can have a standalone Key Generation Service(KGS) that generates random six letter strings beforehand and stores them in a database. Whenever we want to shorten a URL, we will just take one of the already generated keys and use it. This approach will make things quite simple and fast since we are not encoding the URL or worrying about duplications or collisions. KGS will make sure all the keys inserted in our keys database are unique.
+
+### Solution1
+The easiest and stupid solution :). The main idea is, we define a list to hold all the urls, and for each url, we simplely use the list index number as the string after the '/'.
+
+For example:
+```python
+url_lists = [
+    'https://leetcode.com/problems/design-tinyurl',
+    'https://leetcode.com/problems/design-tinyurlaa',
+    'https://leetcode.com/problems/design-tinyurlbbb'
+]
+
+# The shortened URLs
+url_lists_shortened = [
+    'http://tinyurl.com/0',
+    'http://tinyurl.com/1',
+    'http://tinyurl.com/2'
+]
+
+# Encoding
+return 'http://tinyurl.com/' + str(len(url_lists)-1)
+
+# Decoding
+return url_lists[int(url_lists_shortened[i].split('/')[-1])]
+```
