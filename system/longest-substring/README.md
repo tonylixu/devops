@@ -7,5 +7,17 @@ Given a string, find the length of the longest substring without repeating chara
 * Given "pwwkew", the answer is "wke", with the length of 3. Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
 
 ### Solution analysis
-We can start solving this problem by traverse the whole array/list. For each element we iterate, append it to a new array(list) if it doesn't exist in the new array/list already.
+Solution1:
 
+The simplest way of solving this is the brute force way. We simply consider all substrings of s one by one, and pick up the one that has the longest length and contains all unique values.
+
+To find all the substrings:
+```python
+for i in range(len(s)):
+    for j in range(i+1, len(s)+1):
+        print s[i]..s[j]
+a
+ab
+abc
+abca...
+```
