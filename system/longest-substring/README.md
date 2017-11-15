@@ -19,8 +19,14 @@ for i in range(len(s)):
 a
 ab
 abc
-abca...
+abca
+abcab
+abcabc
+abcabcb
+abcabcbb...
 ```
+
+This solution is very simple and straight forward, but it also has a big time complexity, the Big O is O(n^3). If you take a close look of the substrings, you can see that we are doing a lot of duplcation checks. For example, "abca", "abcab", "abcabc", ... before we check "abcabc", we already checked "abca" and "abcab" and already know that they both are not the answers, so "abcabc" check is unnecessary. Therefore, we introduce the "sliding window" approach.
 
 Solution2:
 
