@@ -3,7 +3,6 @@ def length_of_longest_substr2(s):
     s2 = set()
     max_len = i = j = 0
     while i < length and j < length:
-        print s2
         if s[j] not in s2:
             s2.add(s[j])
             j += 1
