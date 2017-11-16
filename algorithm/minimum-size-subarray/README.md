@@ -28,6 +28,19 @@ We can use the sacrifies some spaces to gain some speed. We could pre-calculate 
 
 pseudo code:
 ```python
-
+length = len(nums)
+min_len = length + 1
+pre_sum = [0] * length
+pre_sum[0] = nums[0]
+for i in range(length):
+    pre_sum[i] = pre_sum[i-1] + nums[i]
+for i in range(length):
+    total = 0
+    for j in range(i, length):
+        total = pre_sum[j] - pre_sum[i] + nums[i]
+    if total >= s:
+        min_len = min(min_len, (j-i+1))
+print min_len
 ```
+The time complexity for solution2 is O(n^2), but the space complexity is O(n) now.
 
