@@ -11,16 +11,23 @@ Obvisouly we can use brute force solution on this one. We could generate all the
 pseudo code:
 ```python
 length = len(array)
-    min_len = length + 1
-    min_array = []
-    for i in range(length):
-        for j in range(i+1, length+1):
-            total = 0
-            temp_array = []
-            for k in range(i, j):
-                total += array[k]
-                temp_array.append(array[k])
-            if total >= s and min_len > len(temp_array):
-                min_len = len(temp_array)
-                final_array = temp_array
+min_len = length + 1
+for i in range(length):
+    for j in range(i+1, length+1):
+        total = 0
+        for k in range(i, j):
+            total += array[k]
+        if total >= s:
+            min_len = min(min_len, j-i+1)
 ```
+
+The time complexity of the brute force solution is O(n^3) and space complexity is O(1)
+
+### Solution2:
+We can use the sacrifies some spaces to gain some speed. We could pre-calculate the sums of elments at each point, and store it in an array for later use. This way we don't need to calculate sums in a loop each time.
+
+pseudo code:
+```python
+
+```
+
