@@ -20,3 +20,17 @@ We see a conflict here, because i1 finishes before i2 finishes and after i2 star
 
 ### Solution1:
 Alwasy the simplest soution, which is brute force, follow the KISSS principle :). We traverse the whole list and go through each sub list, and compare one by one, if we find an overlap, return false. Othersise return True at the end.
+
+The time complexity of this solution is O(n^2) and space time complexity is O(n). n is the number of element.
+pseudo code
+```python
+for i in range(len(intervals)):
+    for j in range(i+1, len(intervals)):
+        if min(intervals[i].end, intervals[j].end) > max(intervals[i].start, intervals[j].start):
+            return false
+return true
+```
+
+### Solution2:
+We can further decrease the time complexity to O(nlogn) by sorting the list first then traverse the list. Because python sort function time complexity is O(nlogn) and traverse the whole list is n, so the total time complexity is O(nlogn).
+
