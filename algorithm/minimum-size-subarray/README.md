@@ -44,3 +44,5 @@ print min_len
 ```
 The time complexity for solution2 is O(n^2), but the space complexity is O(n) now.
 
+### Solution3:
+

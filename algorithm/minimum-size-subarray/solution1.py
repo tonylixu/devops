@@ -1,5 +1,7 @@
 def min_sub_array_len(s, nums):
     length = len(nums)
+    if length == 0:
+        print 0
     min_len = length + 1
     min_array = []
     for i in range(length):
