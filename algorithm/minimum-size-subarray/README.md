@@ -6,3 +6,4 @@ For example, given the array [2,3,1,2,4,3] and s = 7,
 the subarray [4,3] has the minimal length under the problem constraint.
 
 ### Problem analysis
+Obvisouly we can use brute force solution on this one. We could generate all the sub strings, and calculate the sum, compare with s, then recored the minum. If there is no sum >= s, we simply return 0.
