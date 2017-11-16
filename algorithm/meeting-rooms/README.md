@@ -34,3 +34,13 @@ return true
 ### Solution2:
 We can further decrease the time complexity to O(nlogn) by sorting the list first then traverse the list. Because python sort function time complexity is O(nlogn) and traverse the whole list is n, so the total time complexity is O(nlogn).
 
+pseudo:
+```python
+intervals.sort(key=lambda list:list[0])
+for i in range(1,length):
+    if intervals[i][0] < intervals[i-1][1]:
+        print False
+print True
+```
+
+Notice that intervals.sort() is a in-place sorting function which is O(nlogn).

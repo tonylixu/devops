@@ -10,5 +10,4 @@ def can_attend_meetings(intervals):
 
 if __name__ == '__main__':
     intervals = [[0, 30],[5, 10],[15, 20]]
-    print sorted(intervals, key=lambda list:list[0])
     can_attend_meetings(intervals)
