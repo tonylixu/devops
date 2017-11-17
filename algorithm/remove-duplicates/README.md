@@ -44,3 +44,4 @@ while c < len(nums):
         c += 1
 return p + 1
 ```
+Time complexity is O(n), space complexity is O(n)
