@@ -27,3 +27,20 @@ for k,v in dc.items():
 nums = sorted(total)
 return len(nums)
 ```
+Time complexity is O(n), space complexity is also O(n)
+
+### Solution2
+Use pointers. We can use `p` and `c` two pointers. Starts from element 1 and 2. `p = 1`, `c = 2`. For each `c`, we compare `c` with `p` and `p-1`, if equals, we move `c = c+1`, and compare again. If not equals, we swap `p+1` with `c`, and `p = p+1`. This way, all repated more than twice elements are swaped to the end of the array. We simply return `p+1`.
+pseudo code:
+```python
+if len(nums) <= 2: return len(nums)
+    p = 1; c = 2
+while c < len(nums):
+    if nums[c] == nums[p] and  nums[c] == nums[p-1]:
+        c += 1
+    else:
+        p += 1
+        nums[p] = nums[c]
+        c += 1
+return p + 1
+```
