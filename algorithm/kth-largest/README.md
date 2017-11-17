@@ -7,3 +7,9 @@ Given [3,2,1,5,6,4] and k = 2, return 5.
 
 Note: 
 * You may assume k is always valid, 1 ≤ k ≤ array's length.
+
+### Problem analysis:
+* Is it possible the given array is an empty array?
+* Any other constraints I should be aware of?
+* What are the edge cases here?
+* Can I sort, destroy or create new arrays?
