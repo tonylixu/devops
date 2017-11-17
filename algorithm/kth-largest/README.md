@@ -16,3 +16,7 @@ Note:
 
 ### Solution analysis
 The simplest solution for this one is just to sort the array then output the second last element.
+
+The time complexity is O(nlogn) as this is the avg and worst case.
+
+Space complextity is O(n), n is the number of element. 
