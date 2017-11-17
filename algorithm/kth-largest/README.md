@@ -13,3 +13,6 @@ Note:
 * Any other constraints I should be aware of?
 * What are the edge cases here?
 * Can I sort, destroy or create new arrays?
+
+### Solution analysis
+The simplest solution for this one is just to sort the array then output the second last element.
