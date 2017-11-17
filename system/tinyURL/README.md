@@ -62,4 +62,4 @@ Steps:
 * Append the randomly generatly string to 'http://tinyurl.com/'
 * Record the mapping between encoded string and original string
 * Return the encoded string
-* For decode, simply 
+* For decode, simply gi
