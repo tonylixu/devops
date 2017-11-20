@@ -13,5 +13,14 @@ The basic idea behind threading is very simple: just as the computer can run mor
 So what's the difference betwen launching a new process and a new thread? A new process is completely independent: one process cannot affect or corrupt one anohter. This also gives you some less flexibility in data flow, it is not easy to flow data from one process to anohter compare to thread. This is becuase multiple threads in a process share data.
 
 ### Exmaples
-If you take a look at `retrieve.py` file in this folder, 
+If you take a look at `retrieve-s.py` file in this folder, what this python code does is going through a list of URLs, make a request and calculate the length of the url content and storing into a dictionary. The total running time of `retrieve-s.py` is around 13 seconds.
 
+When I run `retrieve-s.py` from my command line, I started a new process, and this process only has one thread.
+
+Now let's add some threading into this python code. Since each url is indenpendent, the previours url doesn't have anything to do with the next url, we can certainly spawn serarate threads to retrive multiple urls at the same time. The implementation details are in `retrieve-m.py`. In this second approach, we created a "thread safe" data structure called queue, and a `get_length` function so that each time we spawn a new thread, the function can be called by each thread.
+
+When you run `retrieve-m.py`, the main thread spawns a new thread, each of which will call `get_length`. In `get_length`, the information will be feeded into the queue.
+
+When every spawned thread finishes (`join` = wiat until all thread finishes), then we pull the data out from the queue.
+
+The new solution takes abour 1-2 seconds, a huge speed boost.
