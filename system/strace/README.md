@@ -59,4 +59,5 @@ This is a Linux system call, the `execve(const char *filename, char *const argv[
 `line 2: brk(0)                                  = 0x21b8000`
 This `brk(0)` sets the end of data segment to `0x21b8000`
 
-`access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)`
+`line 3: access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)`
+The `access(const char *path, int amode)` system call determines the accessibility of a file. `F_OK` argurment is the existence test. File `/etc/ld.so.nohwcap` is just a file that when it is present the dynamic linker will load the non-optimized version of a library, ven if the CPU supports the optimized version. 
