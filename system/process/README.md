@@ -10,5 +10,8 @@ One example is a "Chrome" process, you have "Chrome" process running, but inside
 ### Thread
 The basic idea behind threading is very simple: just as the computer can run more than one process at a time, so too can our process run more than one thread at a time. When a running process wants to do something in the background, it launches a new thread. The main thread continues to run in the foreground.
 
-So what's the difference betwen launching a new process and a new thread? A new process is completely independent: one process cannot affect or corrupt one anohter. This also gives you some less flexibility in data flow, it is not easy to flow data from one process to anohter compare to thread. This is becuase multiple threads in a process share data. 
+So what's the difference betwen launching a new process and a new thread? A new process is completely independent: one process cannot affect or corrupt one anohter. This also gives you some less flexibility in data flow, it is not easy to flow data from one process to anohter compare to thread. This is becuase multiple threads in a process share data.
+
+### Exmaples
+If you take a look at `retrieve.py` file in this folder, 
 
