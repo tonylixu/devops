@@ -1,5 +1,5 @@
-import requests
 import time
+import requests
 
 urls = [one_line.strip() for one_line in open('urls.txt')]
 length = {}
@@ -10,7 +10,7 @@ for url in urls:
     length[url] = len(response.content)
 
 for k,v in length.items():
-    print("{0:30}: {1:8,}".format(k, value))
+    print("{0:30}: {1:8,}".format(k, v))
 
 end_time = time.time()
 total_time = end_time - start_time
