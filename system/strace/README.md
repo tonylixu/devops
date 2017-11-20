@@ -47,3 +47,16 @@ line 38: munmap(0x7f7fa2e7b000, 4096)            = 0
 line 39: close(2)                                = 0
 line 40: exit_group(0)                           = ?
 ```
+
+### Appendix: "strace pwd" output analysis
+Holy crap, a simle `pwd` call generated 40 lines of output! Have you ever realized that so much is going on behind the scene? 
+
+Let analysis line by line. You might feel going through each line is very tedious, but trust me, you will need to get a good standing of this if you really want to learn `strace` like a real system enginner :)
+
+`line 1: execve("/bin/pwd", ["pwd"], [/* 21 vars */]) = 0`
+This is a Linux system call, the `execve(const char *filename, char *const argv[], char *const envp[])` function executes the program pointed to by filename parameter. In this case, file `/bin/pwd` is executed, with the argument strings contain `pwd` only. We don't have any environment parameters for `envp` array.
+
+`line 2: brk(0)                                  = 0x21b8000`
+This `brk(0)` sets the end of data segment to `0x21b8000`
+
+`access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)`
