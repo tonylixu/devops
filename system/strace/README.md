@@ -61,3 +61,6 @@ This `brk(0)` sets the end of data segment to `0x21b8000`
 
 `line 3: access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)`
 The `access(const char *path, int amode)` system call determines the accessibility of a file. `F_OK` argurment is the existence test. File `/etc/ld.so.nohwcap` is just a file that when it is present the dynamic linker will load the non-optimized version of a library, ven if the CPU supports the optimized version. 
+
+`line 4: mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x:7f7fa2e7c000`
+`void *mmap(void *start, size_t length, int prot, int flags,  int fd, off_t offset` maps files or devices into memory. `PORT_READ|PORT_WRITE` stands for pages may be read or written, this is for memory protection. `MAP_PRIVATE|MAP_ANONYMOUS` specifies the type of the mapped object, mapping options and whether modifications made to mapped copy of the pages.
