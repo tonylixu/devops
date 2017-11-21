@@ -8,3 +8,7 @@ Your program should print [1, 2, 3] and [4]
 ```
 
 Notes: Assume there are at least two elements in the array
+
+
+### Problem analysis
+We could use a pointer, traverse the whole array, at each point, we calculate the sum of left side (including the pointer value) and the sum of the right side. Then we compare the sum, if they equal, then we find the magic point.
