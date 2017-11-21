@@ -1,6 +1,10 @@
 ### What is XML-RPC?
 WordPress utilizes XML-RPC to remotely execute functions. The popular plugin JetPack and the WordPress mobile application are two great examples of how WordPress uses XML-RPC. This same functionality also can be exploited to send thousands of requests to WordPress in a short amount of time. This scenario is effectively a brute force attack.
 
+### Security problems:
+* Brute force attacks: Attackers try to login to WordPress using xmlrpc.php with as many username/password combinations as they can enter. A method within xmlrpc.php allows the attacker to use a single command (system.multicall) to guess hundreds of passwords.
+* Denial of Service Attacks via Pingback: Back in 2013, attackers sent Pingback requests through xmlrpc.php of approximately 2500 WordPress sites to “herd (these sites) into a voluntary botnet”. In short, attackers can do hundreds of login attempts within a single HTTP request. 
+
 ### How to Recognizing an XML-RPC Attack
 You will see tons of entries in your apache `access_log` like the following:
 ```bash
