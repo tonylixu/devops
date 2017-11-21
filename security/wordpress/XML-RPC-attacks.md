@@ -1,33 +1,5 @@
-### What is XML-RPC?
-WordPress utilizes XML-RPC to remotely execute functions. The popular plugin JetPack and the WordPress mobile application are two great examples of how WordPress uses XML-RPC. This same functionality also can be exploited to send thousands of requests to WordPress in a short amount of time. This scenario is effectively a brute force attack.
 
-### Security problems:
-* Brute force attacks: Attackers try to login to WordPress using xmlrpc.php with as many username/password combinations as they can enter. A method within xmlrpc.php allows the attacker to use a single command (system.multicall) to guess hundreds of passwords.
-* Denial of Service Attacks via Pingback: Back in 2013, attackers sent Pingback requests through xmlrpc.php of approximately 2500 WordPress sites to “herd (these sites) into a voluntary botnet”. In short, attackers can do hundreds of login attempts within a single HTTP request. 
 
-### How to Recognizing an XML-RPC Attack
-You will see tons of entries in your apache `access_log` like the following:
-```bash
-185.188.204.5 - - [21/Nov/2017:15:19:48 +0000] "POST /xmlrpc.php HTTP/1.0" 500 251 "-" "Mozilla/4.0 (compatible: MSIE 7.0; Windows NT 6.0)"
-```
-
-You will see high server resource usages, for example, Memory. `sar -r` :)
-
-Your wordpress website will be brought down frequently and the `Error connecting to database` will be seen for your browser.
-
-### How to prevent
-* You could install the Jetpack plugin for WordPress can block the XML-RPC multicall method requests with its Protect function. You will still see XML-RPC entries in your web server logs with Jetpack enabled. However, Jetpack will reduce the load on the database from these malicious log in attempts by nearly 90%. To install, just go to "Plugins" -> "Add New" then install "Jetpack".
-* At Apache/Nginx level. Restart the process after.
-  * For Apache, add the following to your conf file:
-```bash
-<Files xmlrpc.php>
-    Order Allow,Deny
-    Deny from all
-</Files>
-```
-  * For Nginx:
-```bash
-location /xmlrpc.php {
-      deny all;
-}
-``` 
+### After WP 4.7
+Good news! From Wordpres version 4.7 released , WordPress core developers are turning WordPress’s code into a REST application. you won’t have to use XML-RPC to use the mobile apps or Jetpack.
+Instead, you’ll authenticate yourself in external apps through the OAuth protocol. You may not know what OAuth is, but if you’ve ever clicked a Twitter button on a post, you’ve used OAuth.
