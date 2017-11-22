@@ -1,0 +1,4 @@
+### What happens under the hood after typing 'ls'?
+First of all, this is an `interrupt` triggerred by the hardware (keyboard).
+
+When CPU is interrupted, it stops what it is doing and immediately transferes execution to a fixed location. Then the interrupt service routine executes. So when you press the first key `l` on your keyboard, the keyboard device driver loads the appropriate registers within the device controller. The device controller then examines the contents of these registers to determine what action to take, in this case, the action is "read the character from the keyboard". Then the controller starts the transfer of data from the keyboard to the local buffer. 
