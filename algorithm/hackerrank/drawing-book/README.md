@@ -29,3 +29,6 @@ Sample Input:
 * You can apply the same idea from the tail, give a 7 pages book [0|1, 2|3, 4|5], 6|7], to get to page #2 from the back, you need (7-2)/2 flips ((The total number of steps from page #0 to #7) - (the number of steps from page #0 to page #p).
 * From page #1 to page #n, you need n/2 number of flips.
 
+### Solution
+See `solution1.py`. Both time complexity and space complexity on `solution1.py` is constant.
+
