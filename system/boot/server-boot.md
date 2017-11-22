@@ -1,5 +1,10 @@
-## What happens during the boot process from the moment you turn on the machine until you get a login prompt? 
-There are 6 high level statges of a typical Lnux boot process.
+## What happens during the boot process from the moment you turn on the machine until you get a login prompt?
+
+When a computer is powered up, it needs to have an initial (bootstrap) program to run. Typically it is stored within the computer hardware in read-only memory (ROM) or electrically erasable programmable read-only memory (EEPROM), it is also known as `firmware`. 
+
+This `bootstrap` prgoram initialize the system, from CPU register to device controllers to memory contents. It knows how to locate and load the OS kernel and how to start executing the system. Once kernel is loaded and running, it can start serving the system and users. Some services are provided outside of the kernel, by system programs that are loaded into memory at boot time to become `system processes`. On Linux, the first system process is `init`. It starts many other processes. Once this phrase is complete, the system is fully booted.
+
+There are 6 high level statges of a typical Linux boot process.
 * BIOS: BIOS stands for "Basic Input/Output System", it performs some system integrity checks first, then it will search, load and execute the boot loader program. It looks for boot loader in floppy, cd-rom and hard drive. You can change the boot sequence even. Once the boot loader is located, it will be loaded into memory, then BIOS passes the control to boot loader.
 * MBR: MBR stands for "Master Boot Record". It is located in the first sector of bootable disk. In Liux env, its tupically /dev/hda or /dev/sda. MBR is <= 512 Bytes and contians three components:
   * primary boot load info, usually 446 bytes
