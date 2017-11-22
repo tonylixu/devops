@@ -12,26 +12,28 @@ class MinStack(object):
         :type x: int
         :rtype: void
         """
+        # Time complexity is O(n)
         self.nums.insert(0,x)
-        
 
     def pop(self):
         """
         :rtype: void
         """
+        # Time complexity is O(1)
         self.nums.pop(0)
-        
 
     def top(self):
         """
         :rtype: int
         """
+        # Time complexity is O(1)
         return self.nums[0]
 
     def getMin(self):
         """
         :rtype: int
         """
+        # Time complexity is O(n)
         return min(self.nums)
 
 

@@ -17,3 +17,10 @@ minStack.pop();
 minStack.top();      --> Returns 0.
 minStack.getMin();   --> Returns -2.
 ```
+
+
+### Problem analysis
+With Python, it is easy to implement a solution, because all the stack ops are already defined in Python list ops.
+
+### Solution 1
+See `solution1.py`
