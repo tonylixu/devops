@@ -32,3 +32,6 @@ Sample Input:
 ### Solution
 See `solution1.py`. Both time complexity and space complexity on `solution1.py` is constant.
 
+### Optimization
+There is not much you can do on the time and space complxity, but you can probably do something to the edge cases. If you put edge cases in the main solution, the main solution actually covers the edge cases. So to optimize, we don't need to conisder edge cases. See `solution2.py`
+
