@@ -10,7 +10,7 @@ def solve(n, p):
         exit(0)
     # Main solution
     flips_from_head = p/2
-    flips_from_tail = (n-p)/2
+    flips_from_tail = n/2-p/2
     print min(flips_from_head, flips_from_tail)
 n = 9
 p = 3
