@@ -21,4 +21,4 @@ class Solution(object):
                 pre.end = max(pre.end, cur.end)
             else:
                 merged_intervals.append(cur)
-        return merged_intervals]
+        return merged_intervals
