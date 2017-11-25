@@ -12,7 +12,8 @@ class Solution(object):
         """
         if len(intervals) == 0 or len(intervals) == 1:
             return intervals
-        intervals.sort(key=lambda x: x.start)
+        # We sort the list with the interval's start
+        intervals.sort(key=lambda x:x.start)
         merged_intervals = [intervals[0]]
         for i in range(1, len(intervals)):
             pre, cur = merged_intervals[-1], intervals[i]
@@ -20,4 +21,4 @@ class Solution(object):
                 pre.end = max(pre.end, cur.end)
             else:
                 merged_intervals.append(cur)
-        return merged_intervals
+        return merged_intervals]
