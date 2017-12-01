@@ -53,3 +53,8 @@ So based on the above analysis, we start calculating total from index `0`, and w
 See solution2.
 
 The time complexity of solution2 is down to O(n), but we need an extra dictionary to hold reminders.
+
+### Note:
+Pay attention to the edge cases:
+* We define dmap = {0:-1}, if you don't define dmap[0] to -1, you will fail on case [0, 0]
+* We return true on "dmap[m] + 1 < index:", if we return on "dmap[m] < index", it will fail on [0, 1, 0]
