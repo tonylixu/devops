@@ -35,4 +35,5 @@ We can traverse the whole list, starting from index `0`, and calculate the sum o
 The time complexity of solution1 is O(n^2)
 
 ### Solution2
-We could optimize solution1 
+Solution1 works, but it has a time complexity of O(n^2) and it will probably exceed the time limit on very big list. We can optimize the soltuion by using a mathmetical way.
+
