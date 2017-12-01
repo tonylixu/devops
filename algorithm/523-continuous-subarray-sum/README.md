@@ -37,3 +37,19 @@ The time complexity of solution1 is O(n^2)
 ### Solution2
 Solution1 works, but it has a time complexity of O(n^2) and it will probably exceed the time limit on very big list. We can optimize the soltuion by using a mathmetical way.
 
+Let's take a look at a very simple example:
+`[1, 4, 5, 3, 4]` and `k` is `7`. And we know we have a sub-array of `[3,4]` qualifies. So how do we know there is a sub-array exist, by only go-through or calculate the sum once? Let's start by calculating the total from index `0`.
+```bash
+step1: 1 % 7 = 1 
+step2: 5 % 7 = 5
+step3: 10 % 7 = 3
+step4: 13 % 7 = 6
+step5: 17 % 7 = 3
+```
+Pay attention to `step 3` and `step 5`. At `step 3`, the total is `1+4+5=10`, and `10%7`is `3`. At `step 4`, we add a number `3`, then at `step 4`, we add a number `4`, which makes the `total%k` back to `3`. This tells us we just add a multiple of `k` to total, because a number `(n + k) % k` == `n % k`.
+
+So based on the above analysis, we start calculating total from index `0`, and we use a dictionary to `memorize` the reminders, if during the process we entounter an existing reminder, we find a sub-array.
+
+See solution2.
+
+The time complexity of solution2 is down to O(n), but we need an extra dictionary to hold reminders.
