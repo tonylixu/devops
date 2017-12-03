@@ -18,3 +18,5 @@ gives you
 ```
 
 Got the idea? Now checkout the `solution.py`
+
+The time complexity of the solution is O(n), even though we have a second for loop, but it constant, always loop 3 times.
