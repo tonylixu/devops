@@ -13,3 +13,6 @@ Explanation: 1 * 1 + 2 * 2 = 5
 Input: 3
 Output: False
 ```
+
+### Solution Analysis:
+The simplest solution would be to consider every possible combination of two integers and check if the sum of their squares equals `c`. Since both a and b must lie within the range of `(0, sqrt(c))`, we only need to verify the values of `a` and `b` in this range only.
