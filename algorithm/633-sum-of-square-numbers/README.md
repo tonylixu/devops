@@ -18,3 +18,6 @@ Output: False
 The simplest solution would be to consider every possible combination of two integers and check if the sum of their squares equals `c`. Since both a and b must lie within the range of `(0, sqrt(c))`, we only need to verify the values of `a` and `b` in this range only.
 
 The time complexity of `solution1.py` is `O(n^2)`
+
+### Solution2 Analysis:
+We can reduce the time complexity to `O(n)` by only checking the range of [0, sqrt(c)], as long as there is a number (c - a**2) is a square number. We find an answer.
