@@ -1,3 +1,26 @@
+import sys
+
+class Solution:
+    # Write your code here
+    def __init__(self):
+        # Queue definition
+        self.q = []
+        # Stack definition
+        self.s = []
+        
+    def pushCharacter(self, c):
+        # Push the character into the stack
+        self.s.insert(0, c)
+    
+    def enqueueCharacter(self, c):
+        self.q.insert(0, c)
+        
+    def popCharacter(self):
+        return self.s.pop(0)
+    
+    def dequeueCharacter(self):
+        return self.q.pop(-1)
+
 if __name__ == '__main__':
     # read the string s
     s=raw_input()
