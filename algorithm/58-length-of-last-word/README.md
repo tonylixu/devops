@@ -10,3 +10,6 @@ Note: A word is defined as a character sequence consists of non-space characters
 Input: "Hello World"
 Output: 5
 ```
+
+### Problem Analysis
+This is an easy one, we can generate a list by spliting the entire string on space, and output the length of last word. Watch for the edge case when list is empty or only contains spaces.
