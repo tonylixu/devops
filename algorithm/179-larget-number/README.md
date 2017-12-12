@@ -13,7 +13,7 @@ if a + b > b + a:
 else:
     return 1
 ```
-
+ p
 The key here is, since we are comparing the str version of sum, the `+` will concatenate two strings together. For a given two strings `121` and `12`(`['121', '12']`), apparently we should sort it to (`['12', '121']`), because `12112` is small than `12121`. So the lambda function here, is to help us to define the comparison mechnisam.
 
 ```python
