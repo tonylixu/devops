@@ -22,4 +22,6 @@ We could use a dictionary, which `k` is the array element and value is the index
 
 If the element doesn't exist, we add it into the dictionary, else if the difference qualifies, we return `True`, otherwise we update the value index to be the current index and move on to the next element.
 
-If at the end there's no element qualifies, we return False. 
+If at the end there's no element qualifies, we return False.
+
+Note: Since we are getting values from dictionary, it is a good idea to use the python built-in method dict.get(key[, default]) from Python standard library. If the key exists in the dict, then the value for that key is returned. If it does not exist, then the default value specified as the second argument to get() is returned. Note that the default value defaults to None if a second argument is not provided.
