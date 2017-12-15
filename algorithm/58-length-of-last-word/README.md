@@ -7,7 +7,7 @@ Note: A word is defined as a character sequence consists of non-space characters
 
 ### Example:
 ```bash
-Input: "Hello World"
+Input: "Hello World"it 
 Output: 5
 ```
 
