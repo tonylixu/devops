@@ -27,3 +27,12 @@ class Solution:
         
             if node.left: queue.insert(0,node.left)
             if node.right: queue.insert(0,node.right)
+
+if __name__ == '__main__':
+    T=int(input())
+    my_tree=Solution()
+    root=None
+    for i in range(T):
+        data=int(input())
+        root=my_tree.insert(root,data)
+    my_tree.level_order(root)
