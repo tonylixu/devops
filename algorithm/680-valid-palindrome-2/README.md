@@ -26,3 +26,5 @@ We could check if a string is or contains a palindrome sub-string by going throu
 We start from the full string `s`, then move on to `s[1:]`, `s[0:1] + s[2:]`... and so on.
 
 The Python implementation is in `solution1.py`.
+
+The time complexity of `solution1` is O(n^2), which exceed the time limit. The space complexity is O(3n). Not a very good implementation/solution.
