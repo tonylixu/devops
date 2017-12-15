@@ -15,3 +15,9 @@ class Solution:
                 cur = self.insert(root.right, data)
                 root.right = cur
         return root
+
+    def get_height(self.root):
+        if root is None:
+            return -1
+        else:
+            return max(self.get_height(root.left), self.get_height(root.right)) + 1
