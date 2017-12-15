@@ -7,3 +7,27 @@ Hint: You'll find a queue helpful in completing this challenge.
 The locked stub code in your editor reads the following inputs and assembles them into a BST: 
 The first line contains an integer,  `T`(the number of test cases). 
 The `T` subsequent lines each contain an integer, data, denoting the value of an element that must be added to the BST.
+
+### Output Format
+Print the  value of each node in the tree's level-order traversal as a single line of `N` space-separated integers.
+
+### Sample Input
+```bash
+6
+3
+5
+4
+7
+2
+1
+```
+
+### Sample Output
+```bash
+3 2 5 1 4 7 
+```
+
+### Explanation
+The input forms the following binary search tree:![BST](BST.PNG)
+
+We traverse each level of the tree from the root downward, and we process the nodes at each level from left to right. The resulting level-order traversal is `3->2->5->1->4->7`, and we print these data values as a single line of space-separated integers.
