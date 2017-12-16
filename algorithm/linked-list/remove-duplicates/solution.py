@@ -2,7 +2,7 @@ class Node:
     def __init__(self,data):
         self.data = data
         self.next = None 
-        
+
 class Solution: 
     def insert(self,head,data):
             p = Node(data)           
@@ -34,3 +34,13 @@ class Solution:
                 previous = current
             current = current.next
         return head
+
+if __name__ == '__main__':
+    mylist= Solution()
+    T=int(input())
+    head=None
+    for i in range(T):
+        data=int(input())
+        head=mylist.insert(head,data)    
+    head=mylist.removeDuplicates(head)
+    mylist.display(head); 
