@@ -5,3 +5,14 @@ Your local library needs your help! Given the expected and actual return dates f
 * If the book is returned after the expected return month but still within the same calendar year as the expected return date, the fine = 500 Hackos x (the number of months late)
 * If the book is returned after the calendar year in which it was expected, there is a fixed fine of 10000 Hackos.
 
+### Input Format
+* The first line contains 3 space-separated integers denoting the respective day, month, and year on which the book was actually returned.
+* The second line contains 3 space-separated integers denoting the respective day, month, and year on which the book was expected to be returned (due date).
+
+### Constraints
+* 1 <= D <= 31
+* 1 <= M <= 12
+* 1 <= Y <= 3000
+
+### Output Format
+Print a single integer denoting the library fine for the book received as input.
