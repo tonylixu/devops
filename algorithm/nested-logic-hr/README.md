@@ -16,3 +16,19 @@ Your local library needs your help! Given the expected and actual return dates f
 
 ### Output Format
 Print a single integer denoting the library fine for the book received as input.
+
+### Examples:
+```bash
+Input:
+9 6 2015
+6 6 2015
+
+Output
+45
+```
+
+### Explanation
+* Actual return date: 2015-06-09
+* Expected return date: 2015-06-06
+
+The actual return date is 3 days late.
