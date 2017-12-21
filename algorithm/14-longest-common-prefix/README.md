@@ -7,3 +7,8 @@ Given strs = ["hello", "heaven", "heavy"]
 
 Return "he"
 ```
+
+### Problem Analysis
+Edge cases:
+* strs is empty, return ""
+* There is no common prefix, return ""
