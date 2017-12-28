@@ -19,3 +19,5 @@ Note: The input number n will not exceed 100,000,000. (1e8)
 We can start with number `2`, and test ervery number, if it is dividable by N, then we save it, after checked everynumber, we calculate the sum, and compare with the number itself. If the sum equals the number, we return True.
 
 `solutiuon1.py`
+
+Unfortunately, this solution exceedes the time limits.
