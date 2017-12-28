@@ -8,7 +8,7 @@ def valid_palindrome(s):
         if s[lo] != s[hi]:
             s1 = s[:lo] + s[lo+1:]
             s2 = s[:hi] + s[hi+1:]
-            return self.is_palindrome(s1) or self.is_palindrome(s2)
+            return is_palindrome(s1) or is_palindrome(s2)
         lo += 1
         hi -= 1
     return True
