@@ -19,3 +19,6 @@ We can use the first string of the strs, for each element in the string, we chec
 * Return true if the loop finishes uniterrupted (which means all the strings are identical)
 
 `solution1.py`
+
+### Complexity analysis
+The time complexity of solution1 is O(m*n), m is the number of strings, n is the length of the first element.
