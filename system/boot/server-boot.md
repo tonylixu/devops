@@ -1,6 +1,8 @@
 ## What happens during the boot process from the moment you turn on the machine until you get a login prompt?
 
-When a computer is powered up, it needs to have an initial (bootstrap) program to run. Typically it is stored within the computer hardware in read-only memory (ROM) or electrically erasable programmable read-only memory (EEPROM), it is also known as `firmware`. 
+When a computer is powered up, it initializes and then takes few moments to generate reliable power, a "Power Good" signal will be given by the motherboard. Then it needs to have an initial (bootstrap) program to run. Typically it is stored within the computer hardware in read-only memory (RO, probably the BIOS ROM) or electrically erasable programmable read-only memory (EEPROM), it is also known as `firmware`.
+
+Then the BIOS performs the `power-on self test (POST)`. If there are any fatal errors, the boot process stops. If the POST is successful, the BIOS calls INT 19 and then proceeds to look for devices atached to the motherboard. 
 
 This `bootstrap` prgoram initialize the system, from CPU register to device controllers to memory contents. It knows how to locate and load the OS kernel and how to start executing the system. Once kernel is loaded and running, it can start serving the system and users. Some services are provided outside of the kernel, by system programs that are loaded into memory at boot time to become `system processes`. On Linux, the first system process is `init`. It starts many other processes. Once this phrase is complete, the system is fully booted.
 
