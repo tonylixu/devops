@@ -6,3 +6,7 @@ Similarly, every hard disk must have a consistent "starting point" where key inf
 Th eplace where this info is stored is called the the MBR (master boot record), also referred to as the master boot sector or the boot sector.
 
 The MBR is always located at cylinder 0, head 0 and sector 1. This starting point is consistent for almost every disks. When a computer boots, it will always look at this sector 1 for instructions and info on how to proceed with the boot process.
+
+### MBR Structures:
+* Master Partition Table: A small bit of code that is referred to as a table contains a complete description of the disk partitions. When the developer designed the size of MPT, they only gave enough room for four disks, hence the four partition limit. For this reason, the hard disk may only have 4 true partitions. These 4 partitions are called primary or physical partitions. Any additional parition is logical partition that are linked to one of the primary partitions.
+* Master Boot Code: The master boot code is the small bit of computer code that the BIOS loads and executes to start the boot process. When fully executed, it transfers control to the boot program stored on the boot (active) partition to load the OS.
