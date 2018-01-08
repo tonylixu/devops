@@ -11,6 +11,10 @@ int main()
         return 1;
     }
     else if(pid == 0) { /* Child process */
+        /* Child prcess inherits privileges and scheduling attributes from
+         * the parent
+         */
+        /* Overlays its address space with the "/bin/ls" command */
         execlp("/bin/ls", "ls", NULL);
     }
     else { /* Parent process */
