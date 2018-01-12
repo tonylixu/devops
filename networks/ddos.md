@@ -30,3 +30,90 @@ The immediate impact of DDoS attack is the slowness of your website or applicati
 ##    124 138.59.12.763
 ```
 In the above example, the offending IP is "138.59.12.763" with 124 connections. Sometimes attacks are from several IPs, so you might see a small total connection number, but a large list of IPs.
+
+### How to Mitigate DDoS Attacks
+Since we've identified the offending IP(s), now we can kill the connections and to stabilize the server. You can use the `tcpkill` command. This command is part of `dsniff` tool suite for Linux to sniff network traffic for cleartet insecurities.
+
+Install "dsniff":
+```bash
+# apt-get install dsniff
+```
+
+Kill connections from host/IP:
+```bash
+# tcpkill host 138.59.12.763
+tcpkill: listening on eth0 [host 138.59.12.763]
+138.59.12.763:80 > 18.9.12.76:55131: R 3995187069:3995187069(0) win 0
+138.59.12.763:80 > 18.9.12.76:55131: R 3995187313:3995187313(0) win 0
+138.59.12.763:80 > 18.9.12.76:55131: R 3995187801:3995187801(0) win 0
+18.9.12.76:55131 > 138.59.12.763:80: R 1852751082:1852751082(0) win 0
+...
+```
+
+Block the IP in ufw:
+```bash
+# ufw deny from 138.59.12.763 to any
+```
+
+At this point, as you started to kill connections and block offending IPs, your web service should start recovering. You might need to restart your web service if necessary.
+
+### How to Protect Future DDos Attacks?
+Ubuntu comes bundled with UFW, which is an interface to iptable. This is basically a very lightweight router/firewall inside the Linux Kernel that runs way before any user applications.
+
+### We will configure the following UFW rules:
+* Rate limiting: A rate limit of x connections per y seconds means that if x connections has been initiated in the last y seconds by this profile, it will be dropped. Dropping is actually a nice protection against flooding because the sender won't know that you dropped it. He might think the packet was lost, that the port is closed or even better, the server is overloaded. Imagine how nice, your attacker thinks he succeeded, but in fact you are up and running, him being blocked.
+* Connections per IP: A connection is an open channel. A typical browser will open around 5 connections per page load and they should last under 5 seconds each. Firefox, for example, has a default max of 15 connections per server and 256 total. I decided to go for 30 connections / 20 seconds / IP
+* Connections per Class C: Same a above, but this time we apply the rule to the whole Class C of the IP because it is quite common for someone to have a bunch of available IPs. This means for example all IPs looking like 11.12.13.*. In our example, we go for 30 simultaneous connections.
+
+### Configure UFW:
+Update the "/etc/ufw/before.rules", add:
+Add those lines after *filter near the beginning of the file
+```bash
+:ufw-http - [0:0]
+:ufw-http-logdrop - [0:0]
+```
+
+Add those lines near the end of the file, before the "COMMIT":
+```bash
+### Start HTTP ###
+
+# Enter rule
+-A ufw-before-input -p tcp --dport 80   -j ufw-http
+-A ufw-before-input -p tcp --dport 443  -j ufw-http
+
+# Limit connections per Class C
+-A ufw-http -p tcp --syn -m connlimit --connlimit-above 30 --connlimit-mask 24 -j ufw-http-logdrop
+
+# Limit connections per IP
+-A ufw-http -m state --state NEW -m recent --name conn_per_ip --set
+-A ufw-http -m state --state NEW -m recent --name conn_per_ip --update --seconds 20 --hitcount 30 -j ufw-http-logdrop
+
+# Finally accept
+-A ufw-http -j ACCEPT
+
+# Log
+-A ufw-http-logdrop -m limit --limit 3/min --limit-burst 10 -j LOG --log-prefix "[UFW HTTP DROP] "
+-A ufw-http-logdrop -j DROP
+
+### End HTTP ###
+```
+
+### Prevent Ping Flood
+Make sure you don't get ping flood by setting some iptables rules that limit icmp. You can prevent ping/icmp flood with iptables add these rules right before the COMMIT.
+```bash
+-A INPUT -p icmp -m limit --limit 6/s --limit-burst 1 -j ACCEPT
+-A INPUT -p icmp -j DROP
+```
+
+### Disable IPv6
+You can also disable IPv6 if you are not using it:
+```bash
+# vi /etc/default/ufw
+Set to "no"
+IPV6=no
+```
+
+Finally, do a:
+```bash
+# ufw reload
+```
