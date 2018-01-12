@@ -19,3 +19,4 @@
 ##      8 68.224.70.17
 ##     15 127.0.0.1
 ##    124 108.59.12.76
+netstat -ntu | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -n
