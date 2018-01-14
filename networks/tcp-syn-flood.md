@@ -17,7 +17,9 @@ During the TCP transmission, the TCB (Transmission Control Block) data structure
 When an attack starts, the server sees the equivalent of multiple attempts to establish TCP communications. The server also responds to each attempt with a SYN/ACK (synchronization acknowledged) packet from each open port, and with a RST (reset) packet from each closed port. Since this is SYN attack, the client never sends back the ACK packet, instead the clinet probably discard all the ACK-SYN recevied and keep sending SYNs to the server. Server will have to wait certain amount of time to close these half-opened connections. Eventually the TCP backlog is full and server denies any new connections.
 
 ### Defense against syn flood attacks
-Firewall: Iptables is the default firewall for Linux computers.The rule of thumb: block all the incoming traffic except the traffic you REALLY need on your server. Allow management only from trusted sources.
+
+### Firewall
+Iptables is the default firewall for Linux computers.The rule of thumb: block all the incoming traffic except the traffic you REALLY need on your server. Allow management only from trusted sources.
 The easiest case is an attack from one host without IP spoofing. It is easy to eliminate:
 ```bash
 # iptables -A INPUT -p tcp -m state --state NEW -m recent --update --seconds 20 --hitcount 20 -j DROP
