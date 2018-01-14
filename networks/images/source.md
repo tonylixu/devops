@@ -1,0 +1,1 @@
+[ddos_diagram_syn-flood-attack](https://www.verisign.com/en_US/security-services/ddos-protection/syn-flood/index.xhtml)
