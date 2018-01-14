@@ -38,7 +38,7 @@ Some SYN attacks have `unusal` parameters in the TCP header. The first one is MS
 add
 net.ipv4.tcp_max_syn_backlog = 2048
 ```
-* Enable SYN cookies. SYN cookie is a technique used to resist SYN flood attacks. In particular, the use of SYN cookies allows a server to avoid dropping connections when the SYN queue fills up. Instead, the server behaves as if the SYN queue had been enlarged. The server sends back the appropriate SYN+ACK response to the client but discards the SYN queue entry. If the server then receives a subsequent ACK response from the client, the server is able to reconstruct the SYN queue entry using information encoded in the TCP sequence number. [SYN cookies](https://en.wikipedia.org/wiki/SYN_cookies)
+* Enable SYN cookies. SYN cookie is a technique used to resist SYN flood attacks. In particular, the use of SYN cookies allows a server to avoid dropping connections when the SYN queue fills up. Instead, the server behaves as if the SYN queue had been enlarged. The server sends back the appropriate SYN+ACK response to the client but discards the SYN queue entry. If the server then receives a subsequent ACK response from the client, the server is able to reconstruct the SYN queue entry using information encoded in the TCP sequence number. [SYN cookies](https://www.ndchost.com/wiki/lib/exe/fetch.php?tok=0ed1a7&media=http%3A%2F%2Fcr.yp.to%2Fsyncookies.html)
 ```bash
 # echo 1 > /proc/sys/net/ipv4/tcp_syncookies
 # echo 3 > /proc/sys/net/ipv4/tcp_synack_retries
@@ -47,6 +47,7 @@ net.ipv4.tcp_max_syn_backlog = 2048
 addnet.ipv4.tcp_syncookies = 1
 net.ipv4.tcp_synack_retries = 3
 ```
+Detailed explanation of these parameters: [IP Variables](https://www.ndchost.com/wiki/lib/exe/fetch.php?tok=d457e3&media=http%3A%2F%2Fwww.frozentux.net%2Fipsysctl-tutorial%2Fipsysctl-tutorial.html#AEN234)
 
 ### Protection using Switches
 Most switches have some rate-limiting and ACL capability. Some switches provide automatic and/or system-wide rate limiting, traffic shaping, delayed binding (TCP splicing), deep packet inspection and Bogon filtering (bogus IP filtering) to detect and remediate denial of service attacks through automatic rate filtering and WAN Link failover and balancing.
