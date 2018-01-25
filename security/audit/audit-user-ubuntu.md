@@ -16,3 +16,5 @@ Run command ->
 `pstree -p` and grep whatever command you want to audit
 like `grep sshd`
 or simply `ps -ef | grep sshd`
+
+http://www.tothenew.com/blog/auditing-your-ubuntu-servers/
