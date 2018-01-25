@@ -18,4 +18,11 @@ Regarding the ciphers, we can be more specific that list above. We list specific
 ssl_ciphers “EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 EECDH+aRSA+RC4 EECDH EDH+aRSA RC4 !aNULL !eNULL !LOW !3DES !MD5 !EXP !PSK !SRP !DSS”;
 ```
 
-After making the changes, reload Nginx. 
+After making the changes, reload Nginx. You can check your ssl frpm [SSL checker](https://cryptoreport.thawte.com/checker/).
+
+### RC4 vs BEAST
+Today, only TLS 1.2 with GCM suites offer fully robust security. All other suites suffer from one problem or another (e.g, RC4, Lucky 13, BEAST), but most are difficult to exploit in practice. Because GCM suites are not yet widely supported, most communication today is carried out using one of the slightly flawed cipher suites. It is not possible to do better if you’re running a public web site.
+
+The one choice you can make today is whether to prioritize RC4 in most cases. If you do, you will be safe against the BEAST attack, but vulnerable to the RC4 attacks. On the other hand, if you remove RC4, you will be vulnerable against BEAST, but the risk is quite small. Given that both issues are relatively small, the choice isn’t clear.
+
+However, the trend is clear. Over time, RC4 attacks are going to get better, and the number of users vulnerable to the BEAST attack is going to get smaller.
