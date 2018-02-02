@@ -28,3 +28,6 @@ If you need to have a challenging conversation, do it in private; no public flog
 
 ### Delegate
 Trust your team to do its job. Being team leader doesn’t mean you’re there to do other people’s work for them. Be clear on what’s expected of everyone and let them get on with it. When issues or opportunities arise, empower the team to find a resolution themselves with your support—don’t add every new issue to your own to-do list.
+
+### Be decisive
+Don’t procrastinate. Grab the nettle when you need to. It’s all too easy to defer the difficult decisions, but ultimately costly for the job in hand and how you’re viewed as a leader. If things go wrong, take a breath, gather the information you need to make an educated decision and make it. Don’t be afraid of seeking help (it’s a sign of strength, not weakness). Team management is an ongoing learning process and you will never have all the answers.
