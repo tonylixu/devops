@@ -16,3 +16,12 @@ Once your team is up and running, it’s imperative to keep the communication go
 
 ### Lead by example
 Think about the behaviors you want and expect from your team members and be sure to exhibit those traits yourself. You’re the role model, so what you say and do will impact the team’s daily work habits and attitudes. That said, it’s important to be yourself and to believe in yourself. If you fake it, you’ll soon be unmasked and you’ll lose credibility and trust.
+
+Be open, honest and passionate. Treat everyone on the team fairly, with respect and without favoritism and you’ll find those behaviors returned. Extend the same courtesy to the rest of the organisation as well. Never undermine or criticise other individuals or departments in front of the team. Make it clear you’re all there to work towards success for the big picture.
+
+### Reward the good and learn from the bad (and the ugly)
+Be quick to recognise a good performance and reward it where appropriate. You might not be in a position to hand out pay raises and promotions but a little bit of verbal praise goes a long way in showing your team you are both aware of and appreciative of their achievements.
+
+Be equally as timely in tackling poor performance issues.The longer you leave them, the tougher they’ll be to fix. Look for the best in people and understand that mistakes will happen. When they do, learn from them and see how they can be prevented in future. And whatever you do, don’t play the blame game.
+
+If you need to have a challenging conversation, do it in private; no public floggings. And don’t try to win a popularity contest. Not all your feedback and initiatives will be well-received, but if you concentrate more on being everyone’s friend instead of being a strong leader, the work will suffer, as will your integrity.
