@@ -25,3 +25,6 @@ Be quick to recognise a good performance and reward it where appropriate. You mi
 Be equally as timely in tackling poor performance issues.The longer you leave them, the tougher they’ll be to fix. Look for the best in people and understand that mistakes will happen. When they do, learn from them and see how they can be prevented in future. And whatever you do, don’t play the blame game.
 
 If you need to have a challenging conversation, do it in private; no public floggings. And don’t try to win a popularity contest. Not all your feedback and initiatives will be well-received, but if you concentrate more on being everyone’s friend instead of being a strong leader, the work will suffer, as will your integrity.
+
+### Delegate
+Trust your team to do its job. Being team leader doesn’t mean you’re there to do other people’s work for them. Be clear on what’s expected of everyone and let them get on with it. When issues or opportunities arise, empower the team to find a resolution themselves with your support—don’t add every new issue to your own to-do list.
