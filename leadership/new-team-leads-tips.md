@@ -31,3 +31,6 @@ Trust your team to do its job. Being team leader doesn’t mean you’re there t
 
 ### Be decisive
 Don’t procrastinate. Grab the nettle when you need to. It’s all too easy to defer the difficult decisions, but ultimately costly for the job in hand and how you’re viewed as a leader. If things go wrong, take a breath, gather the information you need to make an educated decision and make it. Don’t be afraid of seeking help (it’s a sign of strength, not weakness). Team management is an ongoing learning process and you will never have all the answers.
+
+### Enjoy it!
+Team leadership is often challenging but frequently rewarding. Heading up a team that’s working well and delivering results is a great feeling, so go do it!
